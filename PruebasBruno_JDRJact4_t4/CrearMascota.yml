@@ -1,0 +1,28 @@
+info:
+  name: CrearMascota
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://66.179.80.246:8087/api/mascotas
+  body:
+    type: json
+    data: |-
+      {
+        "nombre": "Copito",
+        "especie": "Roedor",
+        "raza": "Hámster Sirio",
+        "color": "Crema",
+        "genero": "Macho",
+        "edad": 1
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3NleWRhbnkyMDAzQGdtYWlsLmNvbSIsImlhdCI6MTc4NDYyMDI4NSwiZXhwIjoxNzg0NjU2Mjg1fQ.lo8BBkU7OHxknPYbBDregEA7Th0d5XOJqwTbHWsAN6A
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

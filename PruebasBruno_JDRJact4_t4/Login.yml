@@ -1,0 +1,23 @@
+info:
+  name: Login
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://66.179.80.246:8087/api/auth/login
+  body:
+    type: json
+    data: |+
+      {
+        "correo": "joseydany2003@gmail.com",
+        "contrasenia": "secreta123"
+      }
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

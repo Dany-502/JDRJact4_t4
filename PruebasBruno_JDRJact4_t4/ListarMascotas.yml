@@ -1,0 +1,17 @@
+info:
+  name: ListarMascotas
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: http://66.179.80.246:8087/api/mascotas
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3NleWRhbnkyMDAzQGdtYWlsLmNvbSIsImlhdCI6MTc4NDYyMDI4NSwiZXhwIjoxNzg0NjU2Mjg1fQ.lo8BBkU7OHxknPYbBDregEA7Th0d5XOJqwTbHWsAN6A
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
