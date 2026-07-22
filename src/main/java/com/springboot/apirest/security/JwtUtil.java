@@ -30,11 +30,13 @@ public class JwtUtil {
         return extraerClaim(token, Claims::getExpiration);
     }
 
+    // Extraemos todas las claims del token
     public <T> T extraerClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extraerTodasLasClaims(token);
         return claimsResolver.apply(claims);
     }
 
+    // Extrae todas las claims del token
     private Claims extraerTodasLasClaims(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(llaveSecreta)
@@ -43,6 +45,7 @@ public class JwtUtil {
                 .getBody();
     }
 
+    // Verificamos si el token ha expirado
     private Boolean tokenExpirado(String token) {
         return extraerExpiracion(token).before(new Date());
     }
@@ -53,6 +56,8 @@ public class JwtUtil {
         return crearToken(claims, userDetails.getUsername());
     }
 
+    // Creamos el token con las claims, el correo, la fecha de creación y la fecha
+    // de expiración
     private String crearToken(Map<String, Object> claims, String correo) {
         return Jwts.builder()
                 .setClaims(claims)
